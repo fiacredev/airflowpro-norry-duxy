@@ -3,7 +3,7 @@ import { dryerServices } from "@/constants";
 
 export default function Dryer() {
   return (
-    <section className="bg-white py-24 px-6" id="dryer">
+    <section className="bg-white py-24 px-6 rounded-xl border-t-8 border-blue-500 scroll-mt-23" id="dryer">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -38,7 +38,7 @@ export default function Dryer() {
                 </div>
 
                 {/* Title */}
-                <h3 className="uppercase font-bold text-lg mb-2">
+                <h3 className="capitalize font-bold text-lg mb-2 text-blue-500">
                   {item.title}
                 </h3>
 

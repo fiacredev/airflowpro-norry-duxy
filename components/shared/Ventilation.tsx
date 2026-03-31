@@ -3,7 +3,7 @@ import { ventilationServices } from "@/constants";
 
 export default function Ventilation() {
   return (
-    <section className="bg-white py-24 px-6" id="ventilation">
+    <section className="bg-white py-24 px-6 rounded-xl border-t-8 border-blue-500 scroll-mt-23" id="ventilation">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -37,7 +37,9 @@ export default function Ventilation() {
                 </div>
 
                 {/* Title */}
-                <h3 className="uppercase font-bold text-lg mb-2">{item.title}</h3>
+                <h3 className="capitalize font-bold text-lg mb-2 text-blue-500">
+                  {item.title}
+                </h3>
 
                 {/* Description */}
                 <p className="text-gray-500 text-sm leading-relaxed">

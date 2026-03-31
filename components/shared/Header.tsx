@@ -19,6 +19,7 @@ const Header: React.FC = () => {
 const menuItems = [
   { label: "HOME", href: "#home" },
   { label: "ABOUT", href: "#about" },
+  { label: "HVAC", href: "#hvac" },
   { label: "VENTILATION", href: "#ventilation" },
   { label: "DRYER", href: "#dryer" },
   { label: "CHIMNEY", href: "#chimney" },

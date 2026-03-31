@@ -30,11 +30,11 @@ export default function Contact() {
   };
 
   return (
-    <section className="bg-blue-950 text-white py-20 min-h-screen mt-48" id="contact">
+    <section className="bg-blue-950 text-white py-20 min-h-screen mt-48 scroll-mt-23 rounded-xl border-t-8 border-blue-500" id="contact">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <p className="text-[#5ab4f0] tracking-widest font-semibold uppercase">Get in Touch</p>
+          <p className="capitalize tracking-[0.3em] text-sm text-white-600 mb-3">Get in Touch</p>
           <h2 className="text-4xl mt-2 mb-2 text-white font-bold">Contact / Get a Quote</h2>
           <p className="text-[#c8e6fc] text-opacity-70">
             Fill out the form and we'll get back to you promptly with a free, no-obligation quote tailored to your needs.
@@ -119,7 +119,7 @@ export default function Contact() {
                 id="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="p-3 rounded-md border border-[#5ab4f0]/20 bg-blue-800 text-white focus:outline-none focus:ring-2 focus:ring-[#5ab4f0]"
+                className="p-3 rounded-md border border-[#5ab4f0]/20 bg-blue-500 text-white focus:outline-none focus:ring-2 focus:ring-[#5ab4f0]"
               >
                 <option value="" disabled>
                   Select a service...

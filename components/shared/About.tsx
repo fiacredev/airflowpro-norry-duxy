@@ -15,7 +15,7 @@ const points = [
 ];
 
   return (
-    <div className="flex flex-col md:flex-row gap-12 p-12 bg-gradient-to-b from-blue-900 to-blue-800 rounded-2xl text-white mt-48 py-24 px-6" id="about">
+    <div className="flex flex-col md:flex-row gap-12 p-12 bg-gradient-to-b from-blue-500 to-blue-900 rounded-2xl text-white mt-48 py-24 px-6 scroll-mt-23 rounded-xl border-t-8 border-blue-400" id="about">
       
       {/* Stats Cards */}
       <div className="flex flex-wrap gap-6 md:w-1/3">

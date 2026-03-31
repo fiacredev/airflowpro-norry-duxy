@@ -3,7 +3,7 @@ import { chimneyServices } from "@/constants";
 
 export default function Chimney() {
   return (
-    <section className="bg-blue-950 py-11 pb-48 px-6" id="chimney">
+    <section className="bg-blue-950 py-11 pb-48 px-6 scroll-mt-23 rounded-xl border-t-8 border-blue-500" id="chimney">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
