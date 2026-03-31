@@ -1,4 +1,4 @@
-import { Flame, Settings, Home, ShieldCheck, Airplay, Wind, Thermometer } from "lucide-react";
+import { Flame, Settings, Home, ShieldCheck, Airplay, Wind, Thermometer, Activity, AlertOctagon } from "lucide-react";
 
 export const faqItems = [
   {
@@ -111,13 +111,13 @@ export const dryerServices = [
   
   export const chimneyServices = [
     {
-      icon: Home,
+      icon: AlertOctagon,
       title: "Chimneys & Fireplaces",
       description:
       "We service all types of chimneys and fireplace systems, from masonry to modern installations.",
     },
     {
-      icon: Flame,
+      icon: Activity,
       title: "Removes Soot & Creosote",
       description:
       "Creosote is highly flammable. We remove all dangerous buildup thoroughly and safely.",
