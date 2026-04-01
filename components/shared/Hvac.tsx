@@ -4,7 +4,7 @@ import man from '../../public/images/man.png';
 
 export default function Hvac() {
   return (
-    <section className="w-full py-30 bg-gray-100 scroll-mt-23 mt-20 mb-48 rounded-xl border-t-8 border-blue-500" id="hvac">
+    <><section className="w-full py-30 bg-white scroll-mt-23 mt-20 mb-48 rounded-xl border-t-8 border-blue-500" id="hvac">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
         
         {/* TEXT CONTENT */}
@@ -39,5 +39,6 @@ export default function Hvac() {
             </div>
       </div>
     </section>
+</>
   )
 }

@@ -9,14 +9,28 @@ import Chimney from "@/components/shared/Chimney";
 import Contact from "@/components/shared/Contact";
 import Hvac from "@/components/shared/Hvac";
 import BackToTop from "@/components/shared/BackToTop";
+import fume from '../public/images/fume.png'
+import ox from '../public/images/ox.png'
+import co from '../public/images/co.png'
+
+import { InfiniteMovingCards } from "@/components/ui/Marquee";
+
 
 export default function Home() {
+
+  const Icons = Array(17).fill([fume, ox, co]).flat();
+  
   return (
     <div className="min-h-screen bg-gray-50 text-foreground">
       <Header />
       <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
         <About />
+        <InfiniteMovingCards
+          items={Icons}
+          direction="right"
+          speed="fast"
+        />
         <Hvac />
         <Ventilation />
         <Dryer />
