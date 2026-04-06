@@ -1,4 +1,5 @@
-import { Flame, Settings, Home, ShieldCheck, Airplay, Wind, Thermometer, Activity, AlertOctagon } from "lucide-react";
+import { Flame, Settings, Home, ShieldCheck, Airplay, Wind, Thermometer, 
+  Activity, AlertOctagon, BadgeCheck, NotebookText, HandHelping, User } from "lucide-react";
 
 export const faqItems = [
   {
@@ -67,44 +68,44 @@ export const faqItems = [
 
 export const ventilationServices = [
   {
-    icon: Airplay,
-    title: "Airflow Design",
+    icon: HandHelping,
+    title: "A human and accessible service",
     description:
-    "Designing efficient ventilation systems for optimal air circulation in buildings and industrial spaces.",
+    "A technician who speaks to you, without technical jargon. Easy to reach, easy to understand.",
   },
   {
-    icon: Wind,
-    title: "HVAC Optimization",
+    icon: NotebookText,
+    title: "Clear explanations at each step",
     description:
-    "Improving HVAC systems for better energy efficiency, comfort, and indoor air quality.",
+    "You always know what is being done step by step, why is being happen, and how is being processed.",
   },
   {
-    icon: Thermometer,
-    title: "Temperature Control",
+    icon: BadgeCheck,
+    title: "Concrete and verifiable results",
     description:
-    "Implementing smart temperature monitoring and control solutions for precise climate management.",
+    "Before/after photos, healthier air, a cleaner house just left everything for us and let us do our job.",
   },
 ];
 
 
 export const dryerServices = [
   {
-    icon: Wind,
-    title: "Duct Cleaning",
+    icon: User,
+    title: "Emily Carter",
     description:
-    "Complete removal of lint accumulation from the dryer vent line, from the machine all the way to the exterior exhaust outlet.",
+    "The team did an amazing job cleaning our air ducts and dryer vents. Our home feels safer, the air is fresher, and I can finally breathe easier!",
   },
   {
-    icon: Flame,
-    title: "Fire Prevention",
+    icon: User,
+    title: "James Rodriguez",
     description:
-    "Lint is highly flammable. Annual dryer duct cleaning dramatically reduces the risk of dryer fires.",
+    "I was worried about fire hazards in our dryer vent. Their professional cleaning service gave me peace of mind and improved airflow throughout the house.",
   },
   {
-    icon: Settings,
-    title: "Better Efficiency",
+    icon: User,
+    title: "Sophia Nguyen",
     description:
-      "A clear duct means your dryer dries clothes faster, uses less energy, and experiences less mechanical wear.",
+      "Excellent service from start to finish! Our chimney and ducts are spotless, and I can tell the difference in air quality immediately.",
     },
   ];
   

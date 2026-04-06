@@ -3,9 +3,24 @@ import { Button } from "../ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#0a1628] overflow-hidden px-6 py-24 scroll-mt-23 rounded-xl border-t-8 border-blue-500" id="home">
+<section
+  className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 py-24 scroll-mt-23 rounded-xl border-t-8 border-blue-500"
+  id="home"
+>
 
-      {/* Grid Background */}
+      {/* Background Image */}
+    <div className="absolute inset-0">
+      <img
+        src="/ventilation.jpg" // put your image in /public
+        alt="Background"
+        className="w-full h-full object-cover opacity-100"
+      />
+    </div>
+
+      {/* Dark overlay (optional for readability) */}
+    <div className="absolute inset-0 bg-[#0a1628]/80" />
+
+      {/* Grid Background (optional, keep if you like effect) */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(45,125,210,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(45,125,210,0.08)_1px,transparent_1px)] bg-[size:48px_48px]" />
 
       {/* Glow */}
@@ -15,19 +30,19 @@ export default function Hero() {
 
         {/* Eyebrow */}
         <p className="uppercase tracking-[0.3em] text-[#5ab4f0] text-sm mb-4 opacity-80">
-          Elevate with us expert & professional air quality care.
+          air quality care.
         </p>
 
         {/* Title */}
         <h1 className="uppercase font-extrabold leading-[0.95] text-white text-5xl sm:text-6xl md:text-7xl mb-6">
           Clean Air <br />
-          <span className="text-[#5ab4f0]">Breathe Better</span>
+          <span className="text-[#5ab4f0]">Respire</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-[#c8e6fc] text-lg leading-relaxed mb-10">
-          We handle your ventilation, HVAC, dryer ducts, and chimney cleaning quickly 
-          and properly. Breathe easier knowing you're in good hands.
+        <p className="text-[#c8e6fc] text-xl leading-relaxed mb-10">
+          Our team provides professional air duct, dryer vent, wall-mounted AC,
+          and chimney cleaning services with care and precision. Enjoy cleaner air and peace of mind.
         </p>
 
         {/* CTA */}

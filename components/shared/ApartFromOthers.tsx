@@ -8,15 +8,16 @@ export default function Ventilation() {
 
         {/* Header */}
         <p className="uppercase tracking-[0.3em] text-sm text-[#2d7dd2] mb-3">
-          Ventilation
+          What sets us apart from others
         </p>
 
         <h2 className="uppercase font-extrabold text-4xl sm:text-5xl md:text-6xl mb-4 text-gray-100">
-          Ventilation Solutions
+          Our Strength
         </h2>
 
         <p className="text-gray-500 max-w-xl mb-12 leading-relaxed font-serif text-xl">
-          Innovative ventilation solutions for homes, offices, and industrial spaces to ensure optimal airflow and energy efficiency.
+          Innovative cleaning solutions for air ducts, dryer vents,
+          and chimneys to ensure optimal airflow, improved indoor air quality, and energy efficiency.
         </p>
 
         {/* Grid */}

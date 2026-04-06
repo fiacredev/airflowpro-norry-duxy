@@ -1,58 +1,44 @@
 import React from "react";
-import { chimneyServices } from "@/constants";
+import Image from "next/image";
+import Chim from '../../public/chimney.jpg'
 
 export default function Chimney() {
   return (
-    <section className="bg-blue-950 py-11 pb-48 px-6 scroll-mt-23 rounded-xl border-t-8 border-blue-500" id="chimney">
-      <div className="max-w-6xl mx-auto">
-
-        {/* Header */}
-        <p className="capitalize tracking-[0.3em] text-sm text-blue-300 mb-3">
-          Keep Your Home Warm and Safe with Professional Chimney Cleaning
-        </p>
-
-        <h2 className="uppercase font-extrabold text-4xl sm:text-5xl md:text-6xl mb-4 text-white">
-          Chimney
-        </h2>
-
-        <p className="text-blue-200 max-w-xl mb-12 leading-relaxed font-serif text-xl">
-          Safe and efficient fireplaces start with a clean chimney. Our sweeping
-          services protect your home from soot buildup and fire hazards.
-        </p>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {chimneyServices.map((item, i) => {
-            const Icon = item.icon;
-
-            return (
-              <div
-                key={i}
-                className="group relative bg-white/5 border border-blue-400/20 rounded-xl p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl"
-              >
-                {/* Top gradient */}
-                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-400 to-sky-300 scale-x-0 group-hover:scale-x-100 origin-left transition-transform"></div>
-
-                {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-400/10 mb-5 group-hover:bg-blue-400/20 transition">
-                  <Icon className="w-6 h-6 text-blue-300 group-hover:text-white transition" />
-                </div>
-
-                {/* Title */}
-                <h3 className="capitalize font-bold text-lg mb-2 text-white">
-                  {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-blue-200 text-sm leading-relaxed">
-                  {item.description}
+          <><section className="w-full py-30 bg-white scroll-mt-23 mt-20 mb-25 rounded-xl border-t-8 border-blue-500" id="hvac">
+            <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+              
+              {/* TEXT CONTENT */}
+              <div className="flex-1">
+                <h2 className="capitalize text-3xl md:text-4xl font-bold text-blue-500 mb-4">
+                  Chimney Sweeping
+                </h2>
+                <p className="text-gray-500 mb-6">
+                  Our expert chimney sweeping services ensure thorough cleaning, 
+                  improve ventilation, reduce fire risks, and maintain a safe, healthy, and cozy home throughout the year.
                 </p>
+      
+                <ul className="space-y-2 text-gray-500">
+                  <li>✔ Flue CLeaning</li>
+                  <li>✔ Smoke Ventilation improvement</li>
+                  <li>✔ Soot & Creosote Removal</li>
+                </ul>
+      
+                <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                  <a href="#ventilation">Learn More</a>
+                </button>
               </div>
-            );
-          })}
-        </div>
-
-      </div>
-    </section>
+      
+              {/* IMAGE PLACEHOLDER */}
+      
+                  <div className="flex-1 w-full h-80">
+                  <Image 
+                      src={Chim} 
+                      alt="HVAC Service"
+                      className="w-full h-full object-cover rounded-xl"
+                  />
+                  </div>
+            </div>
+          </section>
+      </>
   );
 }

@@ -7,16 +7,16 @@ export default function Dryer() {
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <p className="capitalize tracking-[0.3em] text-sm text-blue-600 mb-3">
-          Breathe Easy with Cleaner, Safer Dryer Ducts
+        <p className="capitalize tracking-[0.3em] text-sm text-gray-600 mb-3">
+          What our customers say about us
         </p>
 
-        <h2 className="uppercase font-extrabold text-4xl sm:text-5xl md:text-6xl mb-4 text-blue-500">
-          Dryer Duct
+        <h2 className="uppercase font-extrabold text-4xl sm:text-5xl md:text-6xl mb-4 text-gray-500">
+          Our Clients
         </h2>
 
         <p className="text-gray-500 max-w-xl mb-12 leading-relaxed font-serif text-xl">
-          Clogged dryer ducts are a leading cause of household fires. Regular cleaning is essential safety maintenance.
+          Hear from our clients about how our services improve safety, airflow, and indoor air quality.
         </p>
 
         {/* Grid */}
@@ -38,7 +38,7 @@ export default function Dryer() {
                 </div>
 
                 {/* Title */}
-                <h3 className="capitalize font-bold text-lg mb-2 text-blue-500">
+                <h3 className="capitalize font-bold text-lg mb-2 text-gray-500">
                   {item.title}
                 </h3>
 
