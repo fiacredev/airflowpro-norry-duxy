@@ -35,7 +35,6 @@ export default function Home() {
           items={Icons}
           direction="right"
           speed="fast"
-          className="mb-10"
         />
         <Services/>
         <FAQ />

@@ -24,7 +24,7 @@ export default function DryerVent() {
           </ul>
 
           <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            <a href="#ventilation">Learn More</a>
+            <a href="#ventilation">Appointment</a>
           </button>
         </div>
 
