@@ -96,20 +96,21 @@ const menuItems = [
 
         {/* Nav */}
         <nav
-          className={`
-            ${menuOpen ? "block" : "hidden"}
-            lg:block
-            absolute lg:relative
-            top-full lg:top-auto
-            left-0 lg:left-auto
-            w-full lg:w-auto
-            bg-white/1 lg:bg-transparent
-            backdrop-blur-md
-            mt-2 lg:mt-0
-            rounded-sm
-            p-4 lg:p-1
-            z-50
-          `}
+            className={`
+              ${menuOpen ? "block" : "hidden"}
+              lg:block
+              absolute lg:relative
+              top-full lg:top-auto
+              left-2 lg:left-auto
+              w-fit max-w-[80%] lg:w-auto
+              bg-blue-500/20 lg:bg-transparent
+              backdrop-blur-md
+              text-white font-semibold
+              mt-2 lg:mt-0
+              rounded-sm
+              p-4 lg:p-1
+              z-50
+        `}
         >
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-6">
               {menuItems.map((item, index) => (

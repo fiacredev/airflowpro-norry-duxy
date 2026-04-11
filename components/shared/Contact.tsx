@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Clock } from 'lucide-react';
 
+const API = "http://localhost:5000";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,20 +21,43 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { name, email, service } = formData;
+    const { name, email, service, phone, message } = formData;
     if (!name || !email || !service) {
       alert('Please fill in your name, email, and select a service.');
       return;
     }
-    alert(`Thank you, ${name}! We received your request and will be in touch shortly.`);
+    setIsSubmitting(true); // start loading
+    try {
+      const response = await fetch(`${API}/api/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, subject: service, message })
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        alert(`Error: ${data.error || 'something went wrong'}`);
+        setIsSubmitting(false);
+        return;
+      }
+      alert(`Thank you, ${name}! we received your request.`);
+      setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      alert('failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false); // stop loading
+    }
   };
 
   return (
     <section className="bg-blue-950 text-white py-20 min-h-screen mt-48 scroll-mt-23 rounded-xl border-t-8 border-blue-500" id="contact">
       <div className="max-w-4xl mx-auto px-4">
-        {/* Header */}
+        {/* header */}
         <div className="mb-8">
           <p className="capitalize tracking-[0.3em] text-sm text-white-600 mb-3">Get in Touch</p>
           <h2 className="text-4xl mt-2 mb-2 text-white font-bold">Contact / Get a Quote</h2>
@@ -41,7 +66,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Info */}
+        {/* contact Info */}
         <div className="mb-12 space-y-4">
           <div className="flex items-center gap-4">
             <Phone className="w-6 h-6 text-[#5ab4f0]" />
@@ -66,7 +91,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Contact Form */}
+        {/* contact Form */}
         <form
           onSubmit={handleSubmit}
           className="bg-white/5 border border-[#5ab4f0]/15 rounded-xl p-8"
@@ -147,9 +172,12 @@ export default function Contact() {
           <div className="mt-6 text-right">
             <button
               type="submit"
-              className="px-10 py-3 bg-gradient-to-r from-[#1a4b8c] to-[#00b4d8] text-white rounded-md hover:opacity-90 transition"
+              disabled={isSubmitting} // disable while sending
+              className={`px-10 py-3 bg-gradient-to-r from-[#1a4b8c] to-[#00b4d8] text-white rounded-md hover:opacity-90 transition ${
+                isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
             >
-              Send Message →
+              {isSubmitting ? 'Sending...' : 'Send Message →'}
             </button>
           </div>
         </form>

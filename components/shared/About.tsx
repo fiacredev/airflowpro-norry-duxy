@@ -1,4 +1,49 @@
+"use client"
+
+import { useEffect, useState } from "react";
+
+type ImageType = {
+  url: string;
+  type: string;
+};
+
+function optimizeCloudinaryUrl(url: string, width: number = 1600): string {
+  if (!url.includes("res.cloudinary.com")) return url;
+
+  return url.replace(
+    "/upload/",
+    `/upload/f_auto,q_auto,w_${width}/`
+  );
+}
+
 export default function About() {
+
+    const API = "http://localhost:5000";
+  
+    const [images, setImages] = useState<ImageType[]>([]);
+    const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      async function fetchImages() {
+        try {
+          const res = await fetch(`${API}/api/images`);
+          const data: ImageType[] = await res.json();
+  
+          setImages(data);
+        } catch (error) {
+          console.error("Failed to load images:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
+  
+      fetchImages();
+    }, []);
+  
+    const bgImage = optimizeCloudinaryUrl(
+      images.find((img) => img.type === "about")?.url || ""
+    );
+    
   const stats = [
     { number: "250+", label: "Projects Delivered" },
     { number: "120+", label: "Satisfied Clients" },
@@ -18,27 +63,28 @@ export default function About() {
       id="about"
     >
 
-      {/* Background Image */}
+      {/* background Image */}
       <div className="absolute inset-0">
         <img
-          src="/bg.jpg"
+          src={bgImage || "/images/default.png"}
           alt="Background"
-          className="w-full h-full object-cover opacity-100"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-500/70 to-blue-900/80" />
+      {/* gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/80" />
 
-      {/* Content Wrapper */}
+      {/* content Wrapper */}
       <div className="relative z-10 flex flex-col md:flex-row gap-12 w-full">
 
-        {/* Stats Cards */}
+        {/* stats Cards */}
         <div className="flex flex-wrap gap-6 md:w-1/3">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center justify-center p-8 bg-blue-700/40 rounded-xl shadow-[0_0_40px_rgba(59,130,246,0.5)] transform transition-transform hover:-translate-y-2 hover:scale-105"
+              className="flex flex-col items-center justify-center p-8 bg-blue-500/20 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.25)] 
+              transform transition-transform hover:-translate-y-2 hover:scale-105"
             >
               <span className="text-4xl font-bold">{stat.number}</span>
               <span className="text-sm mt-2 text-blue-200">{stat.label}</span>
