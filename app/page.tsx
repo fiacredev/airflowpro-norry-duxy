@@ -5,18 +5,16 @@ import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import Hero from "@/components/shared/Hero";
 import Clients from "@/components/shared/Clients";
-import Chimney from "@/components/shared/Chimney";
 import Contact from "@/components/shared/Contact";
-import DryDuct from "@/components/shared/DryerDuct"
-import DryerVent from "@/components/shared/DryerVent";
-import AirConditional from "@/components/shared/AirConditional";
+import Promotions from "@/components/shared/Promotions";
 import BackToTop from "@/components/shared/BackToTop";
+import GoTOPromotions from "@/components/shared/GoToPromo";
 import fume from '../public/images/fume.png'
 import ox from '../public/images/ox.png'
 import co from '../public/images/co.png'
 
 import { InfiniteMovingCards } from "@/components/ui/Marquee";
-import Services from "@/components/shared/Services";
+import ServicesPage from "@/components/shared/ServicePage";
 
 
 export default function Home() {
@@ -28,6 +26,7 @@ export default function Home() {
       <Header />
       <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <Hero />
+        <GoTOPromotions />
         <About />
         <Apart />
         <Clients />
@@ -35,8 +34,10 @@ export default function Home() {
           items={Icons}
           direction="right"
           speed="fast"
+          className="mb-25 mt-25"
         />
-        <Services/>
+        <ServicesPage/>
+        <Promotions />
         <FAQ />
         <Contact />
       </div>
