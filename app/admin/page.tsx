@@ -45,6 +45,7 @@ const AdminDashboard = () => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   
   type ImageType =
   | "hero"
@@ -212,12 +213,23 @@ const handleUpdateService = async () => {
 
         {/* SIDEBAR */}
 
-        <div className="fixed md:left-0 top-0 h-full w-64 bg-white shadow-lg border-r hidden md:block">
+        <div className={`fixed left-0 top-0 h-full w-64 bg-white shadow-lg border-r
+  transform transition-transform duration-300
+  ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+  md:translate-x-0 md:block`}>
 
           <div className="md:hidden flex items-center justify-between p-4 bg-white shadow">
             <h1 className="text-2xl font-bold text-blue-500">
               Admin Panel
             </h1>
+              <button onClick={() => setSidebarOpen(true)}>
+                ☰
+              </button>
+              <div className="md:hidden p-4">
+              <button onClick={() => setSidebarOpen(false)}>
+                ✕ Close
+              </button>
+            </div>
           </div>
 
           <nav className="mt-6 px-4 space-y-2 text-blue-400">
