@@ -20,7 +20,7 @@ function optimizeCloudinaryUrl(url: string, width: number = 1600): string {
 
 export default function Hero() {
 
-  const API = "http://localhost:5000";
+  const API = "https://airflow-backend-a2bm.onrender.com";
 
   const [images, setImages] = useState<ImageType[]>([]);
   const [loading, setLoading] = useState(true);

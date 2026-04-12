@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const API = "http://localhost:5000";
+const API = "https://airflow-backend-a2bm.onrender.com";
 
 interface LoginResponse {
   token: string;

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const API = "http://localhost:5000";
+const API = "https://airflow-backend-a2bm.onrender.com";
 
 type Promotion = {
   _id: string;

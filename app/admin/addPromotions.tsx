@@ -4,7 +4,7 @@ interface PromotionFormProps {
   onPromotionAdded?: (promotion: any) => void;
 }
 
-const API = "http://localhost:5000";
+const API = "https://airflow-backend-a2bm.onrender.com";
 
 const AddPromotion: React.FC<PromotionFormProps> = ({ onPromotionAdded }) => {
   const [formData, setFormData] = useState({

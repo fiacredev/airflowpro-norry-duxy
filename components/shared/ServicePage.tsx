@@ -12,7 +12,7 @@ type Service = {
   image: string;
 };
 
-const API = "http://localhost:5000";
+const API = "https://airflow-backend-a2bm.onrender.com";
 
 export default function ServicesPage() {
     
