@@ -17,7 +17,7 @@ export default function Footer() {
             <span className={`text-[#5ab4f0] ${myFont.className}`}>
                 AirFlow Pro
             </span>{" "}
-                All Rights Reserved. Clean air, every time.
+                All Rights Reserved. Clean air, whenever.
         </p>
 
           <a
