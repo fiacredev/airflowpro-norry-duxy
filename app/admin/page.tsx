@@ -213,24 +213,27 @@ const handleUpdateService = async () => {
 
         {/* SIDEBAR */}
 
-        <div className={`fixed left-0 top-0 h-full w-64 bg-white shadow-lg border-r
-  transform transition-transform duration-300
-  ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
-  md:translate-x-0 md:block`}>
-
           <div className="md:hidden flex items-center justify-between p-4 bg-white shadow">
             <h1 className="text-2xl font-bold text-blue-500">
               Admin Panel
             </h1>
-              <button onClick={() => setSidebarOpen(true)}>
+              <button onClick={() => setSidebarOpen(true)} className="text-blue-400">
                 ☰
               </button>
-              <div className="md:hidden p-4">
-              <button onClick={() => setSidebarOpen(false)}>
+          </div>
+
+<div className={`fixed left-0 top-0 h-full w-52 md:w-64 
+bg-white/10 backdrop-blur-md
+shadow-lg border-r border-white/20
+transform transition-transform duration-300
+${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+md:translate-x-0 md:block`}>
+
+              <div className="md:hidden flex justify-end p-4">
+              <button onClick={() => setSidebarOpen(false)} className="text-blue-400">
                 ✕ Close
               </button>
             </div>
-          </div>
 
           <nav className="mt-6 px-4 space-y-2 text-blue-400">
 
@@ -275,7 +278,7 @@ const handleUpdateService = async () => {
 
         {/* MAIN CONTENT */}
 
-        <div className="ml-64 p-6ml-0 md:ml-64 p-4 md:p-6">
+        <div className="ml-0 md:ml-64 p-4 md:p-6">
 
           {/* HEADER */}
 
@@ -285,19 +288,20 @@ const handleUpdateService = async () => {
               {activeTab}
             </h2>
 
-            <div className="relative focus-within:outline focus-within:outline-2 focus-within:outline-blue-400 rounded-xl">
-                  <Search
-                    size={20}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                  />
+            <div className="relative focus-within:ring-2 focus-within:ring-blue-400 rounded-xl">
 
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-4 py-2 border rounded-lg text-blue-600 focus:outline-none"
-                  />
+              <Search
+                size={16}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 md:w-5 md:h-5"
+              />
+
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-32 sm:w-48 md:w-64 pl-9 md:pl-10 pr-3 md:pr-4 py-2 border rounded-lg text-blue-600 focus:outline-none text-sm md:text-base"
+              />
             </div>
 
           </div>
@@ -649,7 +653,7 @@ const handleUpdateService = async () => {
     )}
 
   </div>
-  </div>
+      </div>
   );
   
   
