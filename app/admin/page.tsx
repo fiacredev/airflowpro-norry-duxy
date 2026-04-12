@@ -217,7 +217,7 @@ const handleUpdateService = async () => {
             <h1 className="text-2xl font-bold text-blue-500">
               Admin Panel
             </h1>
-              <button onClick={() => setSidebarOpen(true)} className="text-blue-400">
+              <button onClick={() => setSidebarOpen(true)} className="text-blue-400 text-xl">
                 ☰
               </button>
           </div>
