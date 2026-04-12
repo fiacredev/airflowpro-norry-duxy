@@ -44,7 +44,8 @@ const AdminDashboard = () => {
   const [serviceData, setServiceData] = useState<Partial<Service>>({});
   const [editingId, setEditingId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   type ImageType =
   | "hero"
   | "about"
@@ -52,11 +53,13 @@ const AdminDashboard = () => {
   | "dryer"
   | "ac"
   | "chimney";
-
+  
   type ServiceStatus = "active" | "inactive";
 
-  const token = localStorage.getItem("token");
-  const isloggedIn = !!token;
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, []);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -203,7 +206,7 @@ const handleUpdateService = async () => {
     msg.subject?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (isloggedIn)
+  if (isLoggedIn)
     return (
       <div className="min-h-screen bg-gray-50">
 
