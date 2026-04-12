@@ -212,9 +212,9 @@ const handleUpdateService = async () => {
 
         {/* SIDEBAR */}
 
-        <div className="fixed left-0 top-0 h-full w-64 bg-white shadow-lg border-r">
+        <div className="fixed md:left-0 top-0 h-full w-64 bg-white shadow-lg border-r hidden md:block">
 
-          <div className="p-6 border-b">
+          <div className="md:hidden flex items-center justify-between p-4 bg-white shadow">
             <h1 className="text-2xl font-bold text-blue-500">
               Admin Panel
             </h1>
@@ -263,7 +263,7 @@ const handleUpdateService = async () => {
 
         {/* MAIN CONTENT */}
 
-        <div className="ml-64 p-6">
+        <div className="ml-64 p-6ml-0 md:ml-64 p-4 md:p-6">
 
           {/* HEADER */}
 
@@ -294,7 +294,7 @@ const handleUpdateService = async () => {
 
           {activeTab === "dashboard" && (
 
-            <div className="grid grid-cols-3 gap-6 text-blue-400">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-blue-400">
 
               <div className="bg-white p-6 rounded-lg shadow">
                 <h3>Total Services</h3>
@@ -320,8 +320,8 @@ const handleUpdateService = async () => {
           {/* SERVICES */}
 
 {activeTab === "services" && (
-  <div className="bg-white rounded-xl shadow-lg p-6">
-    <table className="w-full border-collapse">
+  <div className="bg-white rounded-xl shadow-lg p-6 overflow-x-auto">
+    <table className="min-w-[700px] w-full border-collapse">
       
       {/* Header */}
       <thead className="rounded-xl bg-gray-50 text-gray-500 text-sm uppercase">
@@ -393,13 +393,13 @@ const handleUpdateService = async () => {
 
           {activeTab === "messages" && (
 
-            <div className="space-y-4 text-blue-400">
+            <div className="space-y-3 md:space-y-4 text-blue-400">
 
               {filteredMessages.map(msg => (
 
                 <div
                   key={msg._id}
-                  className="bg-green p-6 rounded-lg shadow"
+                  className="bg-white p-4 md:p-6 rounded-lg shadow border"
                 >
 
                   <h4 className="font-semibold">{msg.name}</h4>
@@ -432,7 +432,7 @@ const handleUpdateService = async () => {
 
 {activeTab === "settings" && (
 
-    <div className="bg-white p-6 rounded-xl shadow space-y-6">
+    <div className="bg-white p-4 md:p-6 rounded-xl shadow space-y-4 md:space-y-6 text-blue-400">
 
     <h2 className="text-xl font-semibold text-blue-500">
       Manage Website Images
@@ -449,7 +449,7 @@ const handleUpdateService = async () => {
     type="text"
     placeholder="Paste Google Drive URL"
     onChange={(e) => handleImageUpload(e.target.value, "hero", "hero-banner")}
-    className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2"
+    className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
   />
 </div>
 
@@ -462,7 +462,7 @@ const handleUpdateService = async () => {
       type="text"
       placeholder="Paste About Us Background URL"
       onChange={(e) => handleImageUpload(e.target.value, "about", "about-bg")}
-      className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2"
+      className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
     />
   </div>
 
@@ -475,7 +475,7 @@ const handleUpdateService = async () => {
           type="text"
           placeholder="Paste Google Drive URL"
           onChange={(e) => handleImageUpload(e.target.value, "airduct", "airduct-img")}
-          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2"
+          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
       </div>
 
@@ -487,7 +487,7 @@ const handleUpdateService = async () => {
           type="text"
           placeholder="Paste Google Drive URL"
           onChange={(e) => handleImageUpload(e.target.value, "dryer", "dryer-img")}
-          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2"
+          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
       </div>
 
@@ -499,7 +499,7 @@ const handleUpdateService = async () => {
           type="text"
           placeholder="Paste Google Drive URL"
           onChange={(e) => handleImageUpload(e.target.value, "ac", "ac-img")}
-          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2"
+          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
       </div>
 
@@ -511,7 +511,7 @@ const handleUpdateService = async () => {
           type="text"
           placeholder="Paste Google Drive URL"
           onChange={(e) => handleImageUpload(e.target.value, "chimney", "chimney-img")}
-          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2"
+          className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
       </div>
 
