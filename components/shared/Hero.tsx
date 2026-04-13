@@ -81,6 +81,7 @@ export default function Hero() {
         <h1 className="uppercase font-extrabold leading-[0.95] text-white text-5xl sm:text-6xl md:text-7xl mb-6">
           Clean Air <br />
           <span className="text-[#5ab4f0]">Respire</span>
+          
         </h1>
 
         <p className="text-[#c8e6fc] text-xl leading-relaxed mb-10">

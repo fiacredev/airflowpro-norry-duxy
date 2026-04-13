@@ -59,14 +59,14 @@ const menuItems = [
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image
-            src="/images/img_group_1.svg"
+            src="/no_buffer.png"
             alt="Logo"
-            width={22}
-            height={22}
-            className="w-5 h-5 sm:w-6 sm:h-6"
+            width={40}
+            height={40}
+            className="w-10 h-10 sm:w-15 sm:h-15 md:w-10 md:h-10"
           />
           <h1 className={`text-blue-600 ${myFont.className} text-lg sm:text-xl md:text-2xl`}>
-            AIRFLOWPRO
+            Pure Air Nettoyage
           </h1>
         </div>
 

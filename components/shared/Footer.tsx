@@ -15,7 +15,7 @@ export default function Footer() {
         <p className="text-center sm:text-left">
                 © 2026{" "}
             <span className={`text-[#5ab4f0] ${myFont.className}`}>
-                AirFlow Pro
+                Pure Air Nettoyage
             </span>{" "}
                 All Rights Reserved. Clean air, whenever it matters repeatedly.
         </p>
@@ -25,7 +25,7 @@ export default function Footer() {
             className="flex items-center gap-2 text-[#5ab4f0] hover:text-white transition"
           >
             <LogIn className="w-5 h-5" />
-            <span className="hidden sm:inline">NORRYDUXY</span>
+            <span className="hidden sm:inline">DASHBOARD</span>
           </a>
   </div>
 </footer>
