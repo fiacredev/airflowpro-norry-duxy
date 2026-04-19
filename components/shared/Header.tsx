@@ -101,11 +101,11 @@ const menuItems = [
               lg:block
               absolute lg:relative
               top-full lg:top-auto
-              left-2 lg:left-auto
+              right-2 lg:right-auto
               w-fit max-w-[80%] lg:w-auto
-              bg-blue-500/20 lg:bg-transparent
+              bg-blue-900 lg:bg-transparent
               backdrop-blur-md
-              text-white font-semibold
+              text-red font-semibold
               mt-2 lg:mt-0
               rounded-sm
               p-4 lg:p-1
