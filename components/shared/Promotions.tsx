@@ -8,6 +8,7 @@ type Promotion = {
   title: string;
   description: string;
   discount: string;
+  expiresAt: string;
   active: boolean;
 };
 
@@ -25,9 +26,18 @@ export default function Promotions() {
         console.error("Error fetching promotions:", error);
       }
     };
-
     fetchPromotions();
   }, []);
+
+  const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
+
+  
 
   return (
     <section
@@ -38,7 +48,7 @@ export default function Promotions() {
 
         {/* Header */}
         <p className="uppercase tracking-[0.3em] text-sm text-[#2d7dd2] mb-3">
-          Limited time offers
+          Offres à durée limitée
         </p>
 
         <h2 className="uppercase font-extrabold text-4xl sm:text-5xl md:text-6xl mb-4 text-gray-100">
@@ -46,7 +56,8 @@ export default function Promotions() {
         </h2>
 
         <p className="text-gray-500 max-w-xl mb-12 leading-relaxed font-serif text-lg">
-          Take advantage of our latest deals and save on professional cleaning services, then we fix it for you.
+          Profitez de nos dernières offres et économisez sur les services de nettoyage professionnels, 
+          puis nous nous chargeons du reste.
         </p>
 
         {/* Grid */}
@@ -66,6 +77,10 @@ export default function Promotions() {
                   {item.discount}
                 </div>
 
+                <p className="text-xs text-gray-400 mb-4">
+                   Expire le: {formatDate(item.expiresAt)}
+                 </p>
+
                 {/* Title */}
                 <h3 className="capitalize font-bold text-lg mb-2 text-blue-500">
                   {item.title}
@@ -81,7 +96,7 @@ export default function Promotions() {
                 href="#contact"
                 className="mt-2 inline-block bg-blue-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-600 transition"
                 >
-                Claim Offer
+                Offre de réclamation
                 </a>
               </div>
             ))}
