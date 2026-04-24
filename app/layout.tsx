@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AirflowPro Norry Duxy",
-  description: "A lot of coming brother norry duxy..",
+  title: "Pure Air Nettoyage",
+  description: "Pure Air Nettoyage - Votre partenaire de confiance pour un environnement sain et pur.",
 };
 
 export default function RootLayout({
