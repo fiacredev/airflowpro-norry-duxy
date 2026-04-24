@@ -4,63 +4,63 @@ import { Flame, Settings, Home, ShieldCheck, Airplay, Wind, Thermometer,
 export const faqItems = [
   {
     id: "1",
-    question: "What services do you offer?",
+    question: "Quels services offrez-vous ?",
     answer:
-      "We offer a wide range of home services including HVAC systems, ventilation and air duct cleaning, chimney cleaning, dryer vent cleaning, and more. We ensure your home’s systems work efficiently and safely.",
+      "Nous offrons une vaste gamme de services résidentiels au Québec, incluant l’entretien des systèmes de chauffage, de ventilation et de climatisation (CVC), le nettoyage des conduits d’air et de ventilation, le ramonage de cheminées, le nettoyage des conduits de sécheuse et plus encore. Nous veillons à ce que vos systèmes soient correctement entretenus."
   },
   {
     id: "2",
-    question: "Why is HVAC maintenance important?",
+    question: "Est-ce que le nettoyage des conduits enlève vraiment la poussière et les allergènes?",
     answer:
-      "Regular HVAC maintenance ensures your system runs efficiently, preventing breakdowns and prolonging its lifespan. It helps reduce energy costs, improves air quality, and keeps your home comfortable year-round.",
+      "Oui, le nettoyage élimine la poussière, les allergènes et les débris accumulés, ce qui améliore la qualité de l’air dans votre maison.",
   },
   {
     id: "3",
-    question: "How often should I clean my dryer vent?",
+    question: "Combien de temps dure un nettoyage de conduits de ventilation ?",
     answer:
-      "It’s recommended to clean your dryer vent every 6–12 months depending on usage. A clogged vent can lead to fire hazards, increased drying time, and higher energy consumption.",
+      "En moyenne, le service dure entre 2 et 4 heures selon la taille de la maison et l’état des conduits.",
   },
   {
     id: "4",
-    question: "What are the benefits of chimney cleaning?",
+    question: "Est-ce que vos services aident à réduire les risques d’incendie ? ",
     answer:
-      "Chimney cleaning prevents dangerous build-up of creosote, reduces the risk of chimney fires, improves air quality, and ensures your fireplace or stove runs safely and efficiently.",
+      "Oui, surtout le nettoyage des conduits de sécheuse et le ramonage de cheminée, qui sont essentiels pour prévenir les incendies.",
   },
   {
     id: "5",
-    question: "How do you ensure the quality of your HVAC and ventilation services?",
+    question: "Pourquoi est-il important de nettoyer le conduit de sécheuse ? ",
     answer:
-      "We use the latest tools and techniques to ensure our HVAC and ventilation services are of the highest quality. Our certified technicians perform thorough inspections, cleaning, and maintenance to guarantee optimal performance and safety.",
+      "Un conduit de sécheuse obstrué peut causer des incendies et réduire l’efficacité de votre appareil. Le nettoyage assure sécurité et performance.",
   },
   {
     id: "6",
-    question: "Can you help with both residential and commercial systems?",
+    question: "Comment savoir si mon conduit de sécheuse est bloqué ? ",
     answer:
-      "Yes, we offer HVAC, ventilation, and duct cleaning services for both residential and commercial properties. We understand the unique needs of each and provide tailored solutions to ensure efficiency and comfort.",
+      " Voici les signes : Vos vêtements prennent plus de temps à sécher, la sécheuse devient très chaude, il y a une accumulation de charpie et une odeur de brûlé.",
   },
   {
     id: "7",
-    question: "How do I know if my chimney needs cleaning?",
+    question: "À quelle fréquence dois-je faire nettoyer mon climatiseur (murale ou centrale) ? ",
     answer:
-      "If you notice a burning smell, increased smoke in your home, or have trouble starting a fire, these are signs your chimney may need cleaning. It’s also recommended to have your chimney inspected once a year.",
+      "Il est recommandé de faire un nettoyage au moins 1 fois par année, idéalement avant l’été.",
   },
   {
     id: "8",
-    question: "What makes your dryer vent cleaning service stand out?",
+    question: "Est-ce que le nettoyage de climatiseur enlève la moisissure et les bactéries ? ",
     answer:
-      "Our dryer vent cleaning service is thorough and efficient. We not only clean out lint but also inspect your vent system for blockages, ensuring your dryer runs safely and efficiently, saving you time and energy.",
+      "Oui, un nettoyage en profondeur permet d’éliminer la moisissure, les bactéries et les mauvaises odeurs.",
   },
   {
     id: "9",
-    question: "Do you offer emergency services?",
+    question: "Pourquoi le ramonage de cheminée est-il nécessaire chaque année ?",
     answer:
-      "Yes, we provide emergency HVAC and chimney services to ensure your systems are functioning properly when you need them the most. Our team is available to help with urgent repairs and maintenance.",
+      "Le ramonage enlève la créosote, une substance inflammable, et réduit les risques de feu de cheminée tout en assurant une bonne ventilation.",
   },
   {
     id: "10",
-    question: "Are your services environmentally friendly?",
+    question: "Est-ce que le nettoyage améliore vraiment la performance et réduit les coûts d’énergie ? ",
     answer:
-      "Absolutely! We prioritize eco-friendly methods and use energy-efficient equipment. Our cleaning and maintenance services are designed to improve system efficiency, reduce energy consumption, and minimize environmental impact.",
+      "Oui, des systèmes propres fonctionnent plus efficacement, ce qui réduit la consommation d’énergie et prolonge la durée de vie de vos équipements.",
   },
 ];
 
@@ -69,21 +69,21 @@ export const faqItems = [
 export const ventilationServices = [
   {
     icon: HandHelping,
-    title: "A human and accessible service",
+    title: "Un service humain et accessible",
     description:
-    "A technician who speaks to you, without technical jargon. Easy to reach, easy to understand.",
+    " Un technicien qui vous parle simplement, sans jargon technique. Facile à joindre, facile à comprendre. ",
   },
   {
     icon: NotebookText,
-    title: "Clear explanations at each step",
+    title: "Explications claires à chaque étape",
     description:
-    "You always know what is being done step by step, why is being happen, and how is being processed.",
+    "Vous savez toujours ce qui est fait, pourquoi c’est fait et comment le processus se déroule.",
   },
   {
     icon: BadgeCheck,
-    title: "Concrete and verifiable results",
+    title: "Résultats concrets et vérifiables ",
     description:
-    "Before/after photos, healthier air, a cleaner house just left everything for us and let us do our job.",
+    "Photos avant/après, air plus sain, maison plus propre : ils nous ont tout laissé faire.",
   },
 ];
 
@@ -91,22 +91,22 @@ export const ventilationServices = [
 export const dryerServices = [
   {
     icon: User,
-    title: "Emily Carter",
+    title: "Mathilde Haye",
     description:
-    "The team did an amazing job cleaning our air ducts and dryer vents. Our home feels safer, the air is fresher, and I can finally breathe easier!",
+      "L’équipe a fait un travail incroyable pour nettoyer nos conduits d’air et de sécheuse. Notre maison est plus sécuritaire et l’air est beaucoup plus frais !",
   },
   {
     icon: User,
-    title: "James Rodriguez",
+    title: "Nathan Laviolette",
     description:
-    "I was worried about fire hazards in our dryer vent. Their professional cleaning service gave me peace of mind and improved airflow throughout the house.",
+      "J’étais inquiet des risques d’incendie dans mon conduit de sécheuse. Leur service professionnel m’a vraiment rassuré et a amélioré la circulation d’air.",
   },
   {
     icon: User,
-    title: "Sophia Nguyen",
+    title: "Guy Léonard",
     description:
-      "Excellent service from start to finish! Our chimney and ducts are spotless, and I can tell the difference in air quality immediately.",
-    },
+      "Service excellent du début à la fin ! Nos conduits et notre cheminée sont impeccables, et la différence de qualité d’air est immédiate.",
+  },
   ];
   
   

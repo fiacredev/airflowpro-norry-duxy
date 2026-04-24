@@ -27,7 +27,7 @@ export default function Contact() {
     e.preventDefault();
     const { name, email, service, phone, message } = formData;
     if (!name || !email || !service) {
-      alert('Please fill in your name, email, and select a service.');
+      alert('Veuillez indiquer votre nom, votre adresse courriel et sélectionner un service. ');
       return;
     }
     setIsSubmitting(true); // start loading
@@ -44,11 +44,11 @@ export default function Contact() {
         setIsSubmitting(false);
         return;
       }
-      alert(`Thank you, ${name}! we received your request.`);
+      alert(`Merci, ${name}! Nous avons reçu votre demande.`);
       setFormData({ name: '', phone: '', email: '', service: '', message: '' });
     } catch (err) {
       console.error(err);
-      alert('failed to send message. Please try again later.');
+      alert('Échec de l’envoi du message. Veuillez réessayer plus tard.');
     } finally {
       setIsSubmitting(false); // stop loading
     }
@@ -59,10 +59,11 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-4">
         {/* header */}
         <div className="mb-8">
-          <p className="capitalize tracking-[0.3em] text-sm text-white-600 mb-3">Get in Touch</p>
-          <h2 className="text-4xl mt-2 mb-2 text-white font-bold">Contact / Get a Quote</h2>
+          <p className="capitalize tracking-[0.3em] text-sm text-white-600 mb-3">Entrer En Contact</p>
+          <h2 className="text-4xl mt-2 mb-2 text-white font-bold">Contactez-nous / Demandez un devis</h2>
           <p className="text-[#c8e6fc] text-opacity-70">
-            Fill out the form and we'll get back to you promptly with a free, no-obligation quote tailored to your needs.
+            Remplissez le formulaire ci-dessous et nous vous répondrons rapidement avec une soumission gratuite, 
+            sans engagement, adaptée à vos besoins.
           </p>
         </div>
 
@@ -71,22 +72,23 @@ export default function Contact() {
           <div className="flex items-center gap-4">
             <Phone className="w-6 h-6 text-[#5ab4f0]" />
             <div>
-              <strong className="text-[#5ab4f0] uppercase block">Phone</strong>
-              <span>(+250) 7945-19927</span>
+              <strong className="text-[#5ab4f0] uppercase block">TÉLÉPHONE</strong>
+              <span>(438) 403 – 7885</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <Mail className="w-6 h-6 text-[#5ab4f0]" />
             <div>
-              <strong className="text-[#5ab4f0] uppercase block">Email</strong>
-              <span>fiacredeveloper@gmail.com</span>
+              <strong className="text-[#5ab4f0] uppercase block">COURRIEL</strong>
+              <span>info@pureairnettoyage.ca</span>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <Clock className="w-6 h-6 text-[#5ab4f0]" />
             <div>
-              <strong className="text-[#5ab4f0] uppercase block">Hours</strong>
-              <span>Mon–Sat: 7am – 7pm</span>
+              <strong className="text-[#5ab4f0] uppercase block">HEURES D’OUVERTURE</strong>
+              <span>LUNDI – SAMEDI : 7H À 20H</span><br />
+              <span>DIMANCHE: 8H À 17H</span>
             </div>
           </div>
         </div>
@@ -99,7 +101,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col">
               <label htmlFor="name" className="text-[#5ab4f0] uppercase font-semibold text-sm">
-                Full Name
+                NOM COMPLET
               </label>
               <input
                 id="name"
@@ -112,12 +114,12 @@ export default function Contact() {
             </div>
             <div className="flex flex-col">
               <label htmlFor="phone" className="text-[#5ab4f0] uppercase font-semibold text-sm">
-                Phone Number
+                NUMÉRO DE TÉLÉPHONE
               </label>
               <input
                 id="phone"
                 type="tel"
-                placeholder="(+250) 000-0000"
+                placeholder="(438) 403 – 7885"
                 value={formData.phone}
                 onChange={handleChange}
                 className="p-3 rounded-md border border-[#5ab4f0]/20 bg-white/7 text-white focus:outline-none focus:ring-2 focus:ring-[#5ab4f0]"
@@ -125,12 +127,12 @@ export default function Contact() {
             </div>
             <div className="md:col-span-2 flex flex-col">
               <label htmlFor="email" className="text-[#5ab4f0] uppercase font-semibold text-sm">
-                Email Address
+                ADRESSE COURRIEL
               </label>
               <input
                 id="email"
                 type="email"
-                placeholder="fiacredeveloper@example.com"
+                placeholder="f.uwimpuhwe@alustudent.com"
                 value={formData.email}
                 onChange={handleChange}
                 className="p-3 rounded-md border border-[#5ab4f0]/20 bg-white/7 text-white focus:outline-none focus:ring-2 focus:ring-[#5ab4f0]"
@@ -138,7 +140,7 @@ export default function Contact() {
             </div>
             <div className="md:col-span-2 flex flex-col">
               <label htmlFor="service" className="text-[#5ab4f0] uppercase font-semibold text-sm">
-                Service Type
+                SERVICE DEMANDÉ
               </label>
               <select
                 id="service"
@@ -147,13 +149,13 @@ export default function Contact() {
                 className="p-3 rounded-md border border-[#5ab4f0]/20 bg-blue-500 text-white focus:outline-none focus:ring-2 focus:ring-[#5ab4f0]"
               >
                 <option value="" disabled>
-                  Select a service...
+                  Choisissez un service...
                 </option>
-                <option value="ventilation">Ventilation / Air Duct Cleaning</option>
-                <option value="hvac">HVAC Cleaning & Maintenance</option>
-                <option value="dryer">Dryer Duct Cleaning</option>
-                <option value="chimney">Chimney Cleaning</option>
-                <option value="multiple">Multiple Services</option>
+                <option value="Nettoyage des conduits d’air">Nettoyage des conduits d’air</option>
+                <option value="Nettoyage de conduit de sécheuse">Nettoyage de conduit de sécheuse</option>
+                <option value="Nettoyage de climatiseur">Nettoyage de climatiseur</option>
+                <option value="Ramonage de cheminée">Ramonage de cheminée</option>
+                <option value="Multiple Services multiples">Services multiples</option>
               </select>
             </div>
             <div className="md:col-span-2 flex flex-col">
@@ -162,7 +164,7 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
-                placeholder="Describe your situation or ask a question..."
+                placeholder="Décrivez votre besoin (type de service, superficie, problème rencontré, etc.) afin que nous puissions vous fournir une soumission précise. "
                 value={formData.message}
                 onChange={handleChange}
                 className="p-3 rounded-md border border-[#5ab4f0]/20 bg-white/7 text-white min-h-[120px] focus:outline-none focus:ring-2 focus:ring-[#5ab4f0]"
@@ -177,7 +179,7 @@ export default function Contact() {
                 isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message →'}
+              {isSubmitting ? 'Sending...' : 'SEND REQUEST →'}
             </button>
           </div>
         </form>

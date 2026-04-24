@@ -8,15 +8,15 @@ export default function Dryer() {
 
         {/* Header */}
         <p className="capitalize tracking-[0.3em] text-sm text-gray-600 mb-3">
-          What our customers say about us
+          Ce que nos clients disent de nous
         </p>
 
         <h2 className="uppercase font-extrabold text-4xl sm:text-5xl md:text-6xl mb-4 text-gray-500">
-          Our Clients
+          NOS CLIENTS
         </h2>
 
         <p className="text-gray-500 max-w-xl mb-12 leading-relaxed font-serif text-xl">
-          Hear from our clients about how our services improve safety, airflow, and indoor air quality.
+          Découvrez les témoignages de nos clients sur la façon dont nos services améliorent la sécurité, la circulation de l’air et la qualité de l’air intérieur.
         </p>
 
         {/* Grid */}

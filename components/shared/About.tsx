@@ -45,16 +45,16 @@ export default function About() {
     );
     
   const stats = [
-    { number: "250+", label: "Projects Delivered" },
-    { number: "120+", label: "Satisfied Clients" },
-    { number: "15", label: "Years of Expertise" },
+    { number: "250+", label: "Projets livrés" },
+    { number: "120+", label: "Clients satisfaits" },
+    { number: "15", label: "Années d'expérience" },
   ];
 
   const points = [
-    "We provide effective dryer duct cleaning that enhances safety and efficiency",
-    "We ensure fast, reliable, and thorough dryer vent cleaning services",
-    "We make your home safe and warm with expert chimney Sweeping and inspection.",
-    "We guarantee high-quality service with minimal disruption to your routine",
+    "Service rapide, fiable et complet",
+    "Nettoyage efficace des conduits desécheuse pour plus de sécurité et deperformance",
+    "Ramonage et inspection de cheminée réalisés par des experts",
+    "Service de haute qualité avec un minimum de dérangement",
   ];
 
   return (
@@ -94,14 +94,24 @@ export default function About() {
 
         {/* Text Content */}
         <div className="md:w-2/3 flex flex-col justify-center">
-          <h2 className="text-3xl font-extrabold mb-4">About Us</h2>
+          <h2 className="text-3xl font-extrabold mb-4">À propos de nous</h2>
 
           <p className="text-[#c8e6fc] mb-6">
-          We provide customer-focused cleaning services that enhance the safety, efficiency, 
-          and comfort of your home. With years of expertise, we deliver reliable solutions for 
-          air duct cleaning, dryer vent cleaning, wall-mounted AC cleaning, and chimney sweeping. 
-          Our services improve air quality, prevent fire hazards, and extend the lifespan of your 
-          appliances—keeping your home cozy, clean, and safe
+              Nous offrons des services de nettoyage
+              axés sur le client qui améliorent la
+              sécurité, l’efficacité et le confort de
+              votre maison. Grâce à notre expérience,
+              nous proposons des solutions fiables
+              pour : le nettoyage des conduits de
+              ventilation, le nettoyage des conduits
+              de sécheuse, le nettoyage de
+              climatiseurs muraux et le ramonage de
+              cheminée. Nos services améliorent la
+              qualité de l’air, préviennent les
+              risques d’incendie et prolongent la
+              durée de vie de vos appareils pour une
+              maison plus propre, sécuritaire et
+              confortable.
           </p>
 
           <ul className="list-none space-y-3">

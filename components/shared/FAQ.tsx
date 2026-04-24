@@ -13,7 +13,7 @@ export default function FAQ() {
           F.A.Q. SECTION
         </p>
         <h2 className="font-semibold text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-sky-500 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-          Frequently Asked Questions
+          Foire Aux Questions
         </h2>
       </div>
 

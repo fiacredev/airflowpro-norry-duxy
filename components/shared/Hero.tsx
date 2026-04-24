@@ -75,30 +75,30 @@ export default function Hero() {
 
       <AnimatedSection className="relative text-center max-w-3xl">
         <p className="uppercase tracking-[0.3em] text-[#5ab4f0] text-sm mb-4 opacity-80">
-          air quality care.
+          Soins de la qualité de l'air.
         </p>
 
         <h1 className="uppercase font-extrabold leading-[0.95] text-white text-5xl sm:text-6xl md:text-7xl mb-6">
-          Clean Air <br />
-          <span className="text-[#5ab4f0]">Respire</span>
+          Respirer de <br />
+          <span className="text-[#5ab4f0]"> l'air pur.</span>
           
         </h1>
 
         <p className="text-[#c8e6fc] text-xl leading-relaxed mb-10">
-          Our team provides professional air duct, dryer vent, wall-mounted AC,
-          and chimney cleaning services with care and precision.
+          Notre équipe offre des services professionnels de nettoyage de conduits d’air,
+          de conduits de sécheuse, de climatiseurs muraux et de cheminées, avec soin et précision.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
           <Button className="bg-[#2d7dd2] hover:bg-[#5ab4f0] text-white px-8 py-6 text-sm tracking-widest uppercase">
-            <a href="#contact">FreeQuote</a>
+            <a href="#contact">Soumission Gratuite</a>
           </Button>
 
           <Button
             variant="outline"
             className="border border-[#c8e6fc55] text-[#c8e6fc] hover:text-[#5ab4f0] hover:border-[#5ab4f0] px-8 py-6 text-sm tracking-widest uppercase"
           >
-            <a href="#contact">Contact Us</a>
+            <a href="#contact">Contact Nous</a>
           </Button>
         </div>
       </AnimatedSection>

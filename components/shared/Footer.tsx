@@ -17,7 +17,7 @@ export default function Footer() {
             <span className={`text-[#5ab4f0] ${myFont.className}`}>
                 Pure Air Nettoyage
             </span>{" "}
-                All Rights Reserved. Clean air, whenever it matters repeatedly.
+              Tous droits réservés.Respirez, on s’occupe du reste
         </p>
 
           <a

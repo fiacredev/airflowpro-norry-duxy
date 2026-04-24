@@ -9,7 +9,8 @@ import {
   Package,
   MessageCircle,
   BarChart3,
-  Settings
+  Settings,
+  Gift
 } from "lucide-react";
 import AddPromotion from "./addPromotions";
 
@@ -21,6 +22,16 @@ interface Service {
   price?: number;
   description:string,
   status: "active" | "inactive";
+}
+
+interface Promotion {
+  _id: string;
+  title: string;
+  description: string;
+  discount: number; // better as number (even if backend sends string)
+  expiresAt: string; // ISO date string
+  active: boolean;
+  __v?: number;
 }
 
 interface Message {
@@ -41,6 +52,7 @@ const AdminDashboard = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [services, setServices] = useState<Service[]>([]);
+  const [promotions, setPromotions] = useState<Promotion[]>([]);
   const [serviceData, setServiceData] = useState<Partial<Service>>({});
   const [editingId, setEditingId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -168,8 +180,42 @@ const AdminDashboard = () => {
     }
 };
 
+const fetchPromotions = async (): Promise<void> => {
+  try {
+    const res = await fetch(`${API}/api/promotions`);
+    const data = await res.json();
+
+    // optional: normalize discount to number
+    const normalized: Promotion[] = data.map((p: any) => ({
+      ...p,
+      discount: Number(p.discount),
+    }));
+
+    setPromotions(normalized);
+  } catch (error) {
+    console.error("Failed to fetch promotions:", error);
+  }
+};
+
+const handleDeletePromotion = async (id: string): Promise<void> => {
+  try {
+    const res = await fetch(`${API}/api/promotions/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to delete promotion");
+    }
+
+    setPromotions(prev => prev.filter(p => p._id !== id));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 useEffect(() => {
   fetchServices();
+  fetchPromotions();
 }, []);
 
 const handleUpdateService = async () => {
@@ -193,6 +239,7 @@ const handleUpdateService = async () => {
   }
 };
 
+
   const handleEdit = (service: Service) => {
     setServiceData(service);
     setEditingId(service._id);
@@ -200,6 +247,10 @@ const handleUpdateService = async () => {
 
   const filteredServices = services.filter(service =>
     service.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredPromotions = promotions.filter((promo: Promotion) =>
+  promo.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const filteredMessages = messages.filter(msg =>
@@ -251,6 +302,14 @@ md:translate-x-0 md:block`}>
             >
               <Package size={20} className="mr-3" />
               Services
+            </button>
+
+            <button
+              onClick={() => setActiveTab("promotions")}
+              className="flex items-center w-full px-4 py-3 hover:bg-gray-100 rounded-lg"
+            >
+              <Gift size={20} className="mr-3" />
+              Promotions
             </button>
 
             <button
@@ -310,26 +369,33 @@ md:translate-x-0 md:block`}>
 
           {activeTab === "dashboard" && (
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-blue-400">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-blue-400">
 
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3>Total Services</h3>
-                <p className="text-3xl">{services.length}</p>
+                <div className="bg-white p-6 rounded-lg shadow">
+                  <h3>Total Services</h3>
+                  <p className="text-3xl">{services.length}</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow">
+                  <h3>Total Promotions</h3>
+                  <p className="text-3xl">{promotions.length}</p>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow">
+                  <h3>Total Messages</h3>
+                  <p className="text-3xl">{messages.length}</p>
+                </div>
+                
+
+                <div className="bg-white p-6 rounded-lg shadow">
+                  <h3>Unread Messages</h3>
+                  <p className="text-3xl">
+                    {messages.filter(m => m.status === "Unread").length}
+                  </p>
+                </div>
+
+
               </div>
-
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3>Total Messages</h3>
-                <p className="text-3xl">{messages.length}</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3>Unread Messages</h3>
-                <p className="text-3xl">
-                  {messages.filter(m => m.status === "Unread").length}
-                </p>
-              </div>
-
-            </div>
 
           )}
 
@@ -404,6 +470,85 @@ md:translate-x-0 md:block`}>
           </table>
         </div>
       )}
+
+
+
+      {/* PROMOTIONS */}
+
+
+      {activeTab === "promotions" && (
+  <div className="bg-white rounded-xl shadow-lg p-6 overflow-x-auto">
+    <table className="min-w-[700px] w-full border-collapse">
+
+      {/* Header */}
+      <thead className="rounded-xl bg-gray-50 text-gray-500 text-sm uppercase">
+        <tr>
+          <th className="text-left px-6 py-3">Title</th>
+          <th className="text-left px-6 py-3">Discount</th>
+          <th className="text-left px-6 py-3">Status</th>
+          <th className="text-left px-6 py-3">Expires</th>
+          <th className="text-left px-6 py-3">Description</th>
+          <th className="text-left px-6 py-3">Action</th>
+        </tr>
+      </thead>
+
+      {/* Body */}
+      <tbody className="text-blue-500 divide-y divide-blue-50">
+        {filteredPromotions.map(promo => (
+          <tr
+            key={promo._id}
+            className="bg-white hover:bg-blue-50 transition duration-200"
+          >
+            {/* Title */}
+            <td className="px-6 py-4 font-semibold">
+              {promo.title}
+            </td>
+
+            {/* Discount */}
+            <td className="px-6 py-4 font-medium">
+              {promo.discount}%
+            </td>
+
+            {/* Status */}
+            <td className="px-6 py-4">
+              <span
+                className={`px-3 py-1 rounded-full text-xs font-semibold
+                ${
+                  promo.active
+                    ? "bg-blue-100 text-blue-700"
+                    : "bg-blue-50 text-blue-400"
+                }`}
+              >
+                {promo.active ? "active" : "inactive"}
+              </span>
+            </td>
+
+            {/* Expiry */}
+            <td className="px-6 py-4">
+              {new Date(promo.expiresAt).toLocaleDateString()}
+            </td>
+
+            {/* Description */}
+            <td className="px-6 py-4 max-w-xs truncate">
+              {promo.description}
+            </td>
+
+            {/* Action */}
+            <td className="px-6 py-4">
+              <button
+                onClick={() => handleDeletePromotion(promo._id)}
+                className="text-blue-500 hover:text-red-500 hover:bg-red-50 p-2 rounded-full transition"
+              >
+                <Trash2 size={18} />
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+
+    </table>
+  </div>
+)}
 
           {/* MESSAGES */}
 
@@ -613,8 +758,8 @@ md:translate-x-0 md:block`}>
             className="w-full border px-4 py-2 rounded-lg text-blue-500 font-medium outline-none focus:ring-2 
             focus:ring-blue-400 border-gray-300"
           >
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
+            <option value="En service">Active</option>
+            <option value="Hors service">Inactive</option>
           </select>
 
           <div className="flex gap-4">
