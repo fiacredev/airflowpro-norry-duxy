@@ -179,7 +179,7 @@ export default function Contact() {
                 isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             >
-              {isSubmitting ? 'Sending...' : 'SEND REQUEST →'}
+              {isSubmitting ? 'Envoi' : 'Envoyer la demande →'}
             </button>
           </div>
         </form>
