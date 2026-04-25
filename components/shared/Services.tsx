@@ -20,7 +20,7 @@ export default function ServiceSection({ service }: ServiceSectionProps) {
   const [showImage, setShowImage] = useState(true);
 
   const handleBook = () => {
-    alert(`Fill the form below at the bottom to book: ${service.name}`);
+    alert(`Remplissez le formulaire ci-dessous pour réserver: ${service.name}`);
   };
 
   return (

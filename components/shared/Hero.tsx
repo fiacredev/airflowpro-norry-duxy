@@ -79,8 +79,8 @@ export default function Hero() {
         </p>
 
         <h1 className="uppercase font-extrabold leading-[0.95] text-white text-5xl sm:text-6xl md:text-7xl mb-6">
-          Respirer de <br />
-          <span className="text-[#5ab4f0]"> l'air pur.</span>
+          Respirez, on<br />
+          <span className="text-[#5ab4f0]"> s’occupe du reste</span>
           
         </h1>
 

@@ -59,15 +59,19 @@ const menuItems = [
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image
-            src="/no_buffer.png"
+            src="/logo.png"
             alt="Logo"
             width={40}
             height={40}
             className="w-10 h-10 sm:w-15 sm:h-15 md:w-10 md:h-10"
           />
-          <h1 className={`text-blue-600 ${myFont.className} text-lg sm:text-xl md:text-2xl`}>
+
+          <div className="relative w-44 h-[38px]">
+            <Image src="/text.png" alt="Logo" fill className="object-contain" />
+          </div>
+          {/* <h1 className={`text-blue-600 ${myFont.className} text-lg sm:text-xl md:text-2xl`}>
             Pure Air Nettoyage
-          </h1>
+          </h1> */}
         </div>
 
         {/* Hamburger */}
