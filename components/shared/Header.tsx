@@ -17,10 +17,10 @@ const Header: React.FC = () => {
   
 
 const menuItems = [
-  { label: "HOME", href: "#home" },
-  { label: "ABOUT", href: "#about" },
+  { label: "ACCUEIL", href: "#home" },
+  { label: "À PROPOS", href: "#about" },
   { label: "SERVICES", href: "#services" },
-  { label: "FQAs", href: "#fqas" },
+  { label: "FQA", href: "#fqas" },
   { label: "CONTACT", href: "#contact" },
 ];
 

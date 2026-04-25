@@ -79,7 +79,7 @@ export default function About() {
       <div className="relative z-10 flex flex-col md:flex-row gap-12 w-full">
 
         {/* stats Cards */}
-        <div className="flex flex-wrap gap-6 md:w-1/3">
+        {/* <div className="flex flex-wrap gap-6 md:w-1/3">
           {stats.map((stat, idx) => (
             <div
               key={idx}
@@ -90,7 +90,7 @@ export default function About() {
               <span className="text-sm mt-2 text-blue-200">{stat.label}</span>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Text Content */}
         <div className="md:w-2/3 flex flex-col justify-center">

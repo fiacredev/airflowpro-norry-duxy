@@ -57,13 +57,17 @@ router.put("/:id", async (req, res) => {
   try {
     const updatedService = await Service.findByIdAndUpdate(
       req.params.id,
-      req.body,
-      { new: true } // return updated data
+      {
+        ...req.body,
+        price: String(req.body.price),
+      },
+      { new: true }
     );
 
     res.json(updatedService);
   } catch (error) {
-    res.status(500).json({ error: "Failed to update service" });
+    console.error("UPDATE ERROR:", error); 
+    res.status(500).json({ error: error.message });
   }
 });
 

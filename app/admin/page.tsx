@@ -19,7 +19,7 @@ const API = "https://airflow-backend-a2bm.onrender.com";
 interface Service {
   _id: string;
   name: string;
-  price?: number;
+  price?: string;
   description:string,
   status: "active" | "inactive";
 }
@@ -45,7 +45,6 @@ interface Message {
 }
 
 
-
 const AdminDashboard = () => {
 
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -53,7 +52,13 @@ const AdminDashboard = () => {
 
   const [services, setServices] = useState<Service[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
-  const [serviceData, setServiceData] = useState<Partial<Service>>({});
+  const [serviceData, setServiceData] = useState({
+    // temporary checking type
+      name: "",
+      description: "",
+      price: "",
+      status: "inactive",
+  });
   const [editingId, setEditingId] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -225,7 +230,12 @@ const handleUpdateService = async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(serviceData),
+      body: JSON.stringify({
+        name: serviceData.name,
+        description: serviceData.description,
+        price: serviceData.price,
+        status: serviceData.status,
+      })
     });
     
     // Refresh list after update
@@ -233,7 +243,12 @@ const handleUpdateService = async () => {
 
     // Reset form
     setEditingId(null);
-    setServiceData({});
+    setServiceData({
+      name: "",
+      description: "",
+      price: "",
+      status: "inactive",
+    });
   } catch (error) {
     console.error("Update failed:", error);
   }
@@ -241,9 +256,15 @@ const handleUpdateService = async () => {
 
 
   const handleEdit = (service: Service) => {
-    setServiceData(service);
-    setEditingId(service._id);
-  };
+  setEditingId(service._id);
+
+  setServiceData({
+    name: service.name || "",
+    description: service.description || "",
+    price: service.price || "",
+    status: service.status || "inactive",
+  });
+};
 
   const filteredServices = services.filter(service =>
     service.name?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -742,10 +763,13 @@ md:translate-x-0 md:block`}>
           />
 
           <input
-            type="number"
-            value={serviceData.price}
+            type="text"
+            value={serviceData.price ?? ""}
             onChange={(e) =>
-              setServiceData({ ...serviceData, price: parseFloat(e.target.value) || 0 })
+              setServiceData({
+                ...serviceData,
+                price: e.target.value,
+              })
             }
             className="w-full border px-4 py-2 rounded-lg text-blue-500 font-medium outline-none focus:ring-2 focus:ring-blue-400"
           />
@@ -758,8 +782,8 @@ md:translate-x-0 md:block`}>
             className="w-full border px-4 py-2 rounded-lg text-blue-500 font-medium outline-none focus:ring-2 
             focus:ring-blue-400 border-gray-300"
           >
-            <option value="En service">Active</option>
-            <option value="Hors service">Inactive</option>
+            <option value="En Service">Active</option>
+            <option value="Hors Service">Inactive</option>
           </select>
 
           <div className="flex gap-4">
