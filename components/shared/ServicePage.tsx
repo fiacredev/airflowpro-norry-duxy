@@ -39,11 +39,16 @@ export default function ServicesPage() {
   if (loading) return <p className="text-center mt-10">Loading services...</p>;
 
   return (
-    <div id="services" className="scroll-mt-23">
-        <h2 className="text-4xl font-bold uppercase text-blue-500">Nos prestations</h2> 
+    <section id="services" className="scroll-mt-24">
+      <h2 className="text-4xl font-bold uppercase text-blue-500">
+        Nos Services
+      </h2>
+
+      <div className="space-y-10">
         {services.map(service => (
-        <ServiceSection key={service._id} service={service} />
+          <ServiceSection key={service._id} service={service} />
         ))}
-    </div>
+      </div>
+    </section>
     );
 }

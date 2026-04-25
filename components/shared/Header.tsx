@@ -24,33 +24,29 @@ const menuItems = [
   { label: "CONTACT", href: "#contact" },
 ];
 
-  useEffect(() => {
-  const sections = menuItems.map(item =>
-    document.querySelector(item.href)
-  );
- 
-  // detecting active solution on scroll
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollPos = window.scrollY + window.innerHeight / 2;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = menuItems.findIndex(
-            item => item.href === `#${entry.target.id}`
-          );
-          setActiveIndex(index);
-        }
-      });
-    },
-    { threshold: 0.6 }
-  );
+    menuItems.forEach((item, index) => {
+      const el = document.querySelector(item.href);
+      if (!el) return;
 
-  sections.forEach(section => {
-    if (section) observer.observe(section);
-  });
+      const rect = el.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const bottom = top + rect.height;
 
-  return () => observer.disconnect();
-}, []);
+      if (scrollPos >= top && scrollPos <= bottom) {
+        setActiveIndex(index);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [menuItems]);
 
   return (
     <header className="w-full px-4 sm:px-6 lg:px-8 py-2 sticky top-0 z-[70]">
