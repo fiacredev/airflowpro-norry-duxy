@@ -629,7 +629,7 @@ md:translate-x-0 md:block`}>
   </label>
   <input
     type="text"
-    placeholder="Paste Google Drive URL"
+    placeholder="Paste Cloudinary image URL"
     onChange={(e) => handleImageUpload(e.target.value, "hero", "hero-banner")}
     className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
   />
@@ -655,7 +655,7 @@ md:translate-x-0 md:block`}>
         </label>
         <input
           type="text"
-          placeholder="Paste Google Drive URL"
+          placeholder="Paste Cloudinary image URL"
           onChange={(e) => handleImageUpload(e.target.value, "airduct", "airduct-img")}
           className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
@@ -667,7 +667,7 @@ md:translate-x-0 md:block`}>
         </label>
         <input
           type="text"
-          placeholder="Paste Google Drive URL"
+          placeholder="Paste Cloudinary image URL"
           onChange={(e) => handleImageUpload(e.target.value, "dryer", "dryer-img")}
           className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
@@ -679,7 +679,7 @@ md:translate-x-0 md:block`}>
         </label>
         <input
           type="text"
-          placeholder="Paste Google Drive URL"
+          placeholder="Paste Cloudinary image URL"
           onChange={(e) => handleImageUpload(e.target.value, "ac", "ac-img")}
           className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
@@ -691,7 +691,7 @@ md:translate-x-0 md:block`}>
         </label>
         <input
           type="text"
-          placeholder="Paste Google Drive URL"
+          placeholder="Paste Cloudinary image URL"
           onChange={(e) => handleImageUpload(e.target.value, "chimney", "chimney-img")}
           className="block w-full text-sm text-gray-600 rounded-lg border px-4 py-2 md:text-base px-3 md:px-4 py-2"
         />
