@@ -74,7 +74,7 @@ export default function Promotions() {
 
                 {/* Discount Badge */}
                 <div className="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  {item.discount}
+                  {item.discount}% de réduction
                 </div>
 
                 <p className="text-xs text-gray-400 mb-4">
