@@ -715,7 +715,7 @@ md:translate-x-0 md:block`}>
             <div>
               <h3 className="font-semibold text-blue-500">{service.name}</h3>
               <p className="text-sm text-gray-500"><ReactMarkdown>{service.description}</ReactMarkdown>   </p>
-              <p className="text-sm text-gray-700">Price: ${service.price}</p>
+              <p className="text-sm text-gray-700">Price: {service.price}</p>
               <p
                 className={`text-sm ${
                   service.status === "active"

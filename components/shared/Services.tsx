@@ -31,7 +31,7 @@ export default function ServiceSection({ service }: ServiceSectionProps) {
         <div className="flex-1">
           <h2 className="text-2xl md:text-3xl font-bold text-blue-500">{service.name}</h2>
           <p className="text-gray-500 mt-2"><ReactMarkdown>{service.description}</ReactMarkdown></p>
-          <p className="mt-2 font-semibold text-yellow-500">${service.price ?? "N/A"}</p>
+          <p className="mt-2 font-semibold text-yellow-500">{service.price ?? "N/A"}</p>
           <p className={`mt-2 text-sm ${service.status === "Active" ? "text-green-500" : "text-gray-400"}`}>
             {service.status}
           </p>
