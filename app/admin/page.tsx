@@ -452,7 +452,7 @@ md:translate-x-0 md:block`}>
 
               {/* Price */}
               <td className="px-6 py-4 text-blue-500 font-medium">
-                ${service.price}
+                {service.price}
               </td>
 
               {/* Status */}
